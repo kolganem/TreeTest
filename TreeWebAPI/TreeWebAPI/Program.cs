@@ -25,6 +25,7 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<ITreeNodeRepository, TreeNodeRepository>();
 builder.Services.AddScoped<IErrorRecordRepository, ErrorRecordRepository>();
 
+builder.Services.AddScoped<IErrorRecordService, ErrorRecordService>();
 builder.Services.AddScoped<ITreeNodeService, TreeNodeService>();
 
 var app = builder.Build();
