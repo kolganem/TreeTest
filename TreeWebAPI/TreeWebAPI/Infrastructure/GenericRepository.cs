@@ -6,6 +6,8 @@ public abstract class GenericRepository<T> : IGenericRepository<T> where T : cla
 {
     private TreeDbContext _dbContext;
 
+    protected TreeDbContext DbContext => _dbContext;
+
     protected GenericRepository(TreeDbContext context)
     {
         _dbContext = context;
