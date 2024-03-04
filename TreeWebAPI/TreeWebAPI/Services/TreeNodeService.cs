@@ -53,6 +53,10 @@ public class TreeNodeService : ITreeNodeService
         {
            node.Name = newName;
         }
+        else
+        {
+            throw new SecureException("Can't find node for updating name");
+        }
         
         return await _unitOfWork.SaveAsync() > 0;
     }
@@ -64,7 +68,11 @@ public class TreeNodeService : ITreeNodeService
         {
             _unitOfWork.TreeNodes.Delete(node);
         }
-        
+        else
+        {
+            throw new SecureException("Can't find node for deleting");
+        }
+
         return await _unitOfWork.SaveAsync() > 0;
     }
 }
